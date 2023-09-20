@@ -4,9 +4,9 @@
 #### Note
 - Build the FAISS library using 
 ```shell
-cmake -DFAISS_ENABLE_GPU=OFF -DFAISS_ENABLE_PYTHON=OFF -DBUILD_TESTING=OFF -DCMAKE_BUILD_TYPE=Release -DFAISS_ENABLE_C_API=ON -DBUILD_SHARED_LIBS=OFF -B build .
+cmake -DCMAKE_BUILD_TYPE=Release -DFAISS_ENABLE_C_API=ON -DBUILD_SHARED_LIBS=OFF -B build .
 ```
-It creates `libfaiss_c`.a file instead of `libfaiss_c.dylib`.
+It creates `libfaiss_c.a` file instead of `libfaiss_c.dylib`.
 
 - Build script [here](/cgo/thirdparty/build-faiss-macos.sh)
 
@@ -15,3 +15,18 @@ It creates `libfaiss_c`.a file instead of `libfaiss_c.dylib`.
 - The Kmeans CGO code is [hear](/pkg/ivf/clustering_faiss.go)
 
 - The test driver code is [here](/pkg/ivf/clustering_faiss_test.go)
+
+
+### Instructions
+
+1. To build the `libfaiss_c.a` in MacOS
+```shell
+cd cgo/thirdparty
+sh build-faiss-macos.sh
+```
+
+2. To run the test
+```shell
+cd pkg/ivf
+go test -v -run TestFaissKmeans
+```
