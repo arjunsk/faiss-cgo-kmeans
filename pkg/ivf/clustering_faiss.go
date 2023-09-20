@@ -4,11 +4,11 @@ package ivf
 #cgo CFLAGS: -I../../cgo/thirdparty/runtimes/osx-arm64/native
 #cgo LDFLAGS: -L../../cgo/thirdparty/runtimes/osx-arm64/native -lfaiss_c
 
-#include "stdlib.h"
-#include "Clustering_c.h"
-#include "AuxIndexStructures_c.h"
-#include "index_factory_c.h"
-#include "error_c.h"
+#include <stdlib.h>
+#include <Clustering_c.h>
+#include <AuxIndexStructures_c.h>
+#include <index_factory_c.h>
+#include <error_c.h>
 */
 import "C"
 import "errors"
