@@ -11,9 +11,7 @@ package ivf
 #include "error_c.h"
 */
 import "C"
-import (
-	"errors"
-)
+import "errors"
 
 // CGO code for https://github.com/facebookresearch/faiss/blob/main/c_api/Clustering_c.h functions
 type faissClustering struct {
