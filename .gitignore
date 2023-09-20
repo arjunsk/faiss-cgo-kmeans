@@ -5,3 +5,4 @@
 /build/
 /dist/
 /out/
+/cgo/thirdparty/libfaiss-src/
