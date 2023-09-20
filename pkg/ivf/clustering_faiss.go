@@ -1,8 +1,8 @@
 package ivf
 
 /*
-#cgo CFLAGS: -I../../cgo/runtimes/osx-arm64/native
-#cgo LDFLAGS: -L../../cgo/runtimes/osx-arm64/native -lfaiss_c
+#cgo CFLAGS: -I../../cgo/thirdparty/runtimes/osx-arm64/native
+#cgo LDFLAGS: -L../../cgo/thirdparty/runtimes/osx-arm64/native -lfaiss_c
 
 #include "stdlib.h"
 #include "Clustering_c.h"
