@@ -27,7 +27,19 @@ It creates `libfaiss_c.a` file instead of `libfaiss_c.dylib`.
 The Kmeans code fails due this error: `Undefined symbols for architecture arm64:`. 
 
 However, this code works when we build `libfaiss_c.dylib` using `-DBUILD_SHARED_LIBS=ON` and the `libfaiss_c.dylib` is added to the `/usr/local/lib`.
-We will only need the CGO flag `#cgo LDFLAGS: -lfaiss_c` in the go code.
+Then, we add the CGO flag in the go code
+````cgo
+/*
+#cgo LDFLAGS: -lfaiss_c
+
+#include <stdlib.h>
+#include <faiss/c_api/Clustering_c.h>
+#include <faiss/c_api/impl/AuxIndexStructures_c.h>
+#include <faiss/c_api/index_factory_c.h>
+#include <faiss/c_api/error_c.h>
+*/
+````
+
 But I am trying to package FAISS C_API as a static library and link it to the go code.
 
 - The test driver code is [here](/pkg/ivf/clustering_faiss_test.go)
