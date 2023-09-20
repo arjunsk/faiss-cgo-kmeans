@@ -7,8 +7,13 @@
 cd cgo/thirdparty
 sh build-faiss-macos.sh
 ```
+2. Build go project
+```shell
+CGO_LDFLAGS="-L/cgo/thirdparty/runtimes/osx-arm64/native -lfaiss_c" \
+go build ./pkg/ivf
+```
 
-2. To run the test
+3. To run the test
 ```shell
 cd pkg/ivf
 go test -v -run TestFaissKmeans
