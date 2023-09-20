@@ -5,10 +5,10 @@ package ivf
 #cgo LDFLAGS: -L../../cgo/thirdparty/runtimes/osx-arm64/native -lfaiss_c
 
 #include <stdlib.h>
-#include <Clustering_c.h>
-#include <AuxIndexStructures_c.h>
-#include <index_factory_c.h>
-#include <error_c.h>
+#include <faiss/c_api/Clustering_c.h>
+#include <faiss/c_api/impl/AuxIndexStructures_c.h>
+#include <faiss/c_api/index_factory_c.h>
+#include <faiss/c_api/error_c.h>
 */
 import "C"
 import "errors"
