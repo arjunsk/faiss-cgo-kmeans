@@ -4,7 +4,7 @@ BRANCH="main"
 
 brew install libomp
 brew install cmake
-export CMAKE_PREFIX_PATH=/opt/homebrew/opt/openblas:/opt/homebrew/opt/libomp:/opt/homebrew
+export CMAKE_PREFIX_PATH=/opt/homebrew/opt/libomp:/opt/homebrew
 git clone --recursive --branch $BRANCH https://github.com/facebookresearch/faiss.git libfaiss-src
 cd libfaiss-src
 git reset --hard  d87888b13e7eb339bb9c45825e9d20def6665171
