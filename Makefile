@@ -10,7 +10,7 @@ cgo:
 ifeq ($(UNAME_S),Darwin)
 	@cd cgo/thirdparty && sh ./build-faiss-macos.sh
 else
-
+	@cd cgo/thirdparty && sh ./build-faiss-linux.sh
 endif
 
 # build mo-service binary
