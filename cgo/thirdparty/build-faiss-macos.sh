@@ -1,7 +1,5 @@
 #!/bin/bash
 
-BRANCH="main"
-
 brew install libomp
 brew install cmake
 export CMAKE_PREFIX_PATH=/opt/homebrew/opt/libomp:/opt/homebrew
