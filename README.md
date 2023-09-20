@@ -13,9 +13,23 @@ It creates `libfaiss_c.a` file instead of `libfaiss_c.dylib`.
 - The build file is copied [here](/cgo/thirdparty/runtimes/osx-arm64/native)
 
 - The Kmeans CGO code is [hear](/pkg/ivf/clustering_faiss.go)
+```cgo
+/*
+#cgo LDFLAGS: ${SRCDIR}/../../cgo/thirdparty/runtimes/osx-arm64/native/libfaiss_c.a
+
+#include <stdlib.h>
+#include <faiss/c_api/Clustering_c.h>
+#include <faiss/c_api/impl/AuxIndexStructures_c.h>
+#include <faiss/c_api/index_factory_c.h>
+#include <faiss/c_api/error_c.h>
+*/
+```
+
+This code works when we build `libfaiss_c.dylib` using `-DBUILD_SHARED_LIBS=ON` and the `libfaiss_c.dylib` is added to the `/usr/local/lib`.
+We will only need the CGO flag `#cgo LDFLAGS: -lfaiss_c` in the go code.
+But I am trying to package FAISS C_API as a static library and link it to the go code.
 
 - The test driver code is [here](/pkg/ivf/clustering_faiss_test.go)
-
 
 ### Instructions
 
