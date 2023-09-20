@@ -1,8 +1,22 @@
-### Calling FAISS KMEANs using CGO
+## Calling FAISS KMEANs using CGO
+
+### Instructions
+
+1. To build the `libfaiss_c.a` in MacOS
+```shell
+cd cgo/thirdparty
+sh build-faiss-macos.sh
+```
+
+2. To run the test
+```shell
+cd pkg/ivf
+go test -v -run TestFaissKmeans
+```
 
 
-#### Note
-- Build the FAISS library using 
+### Note
+- Build the FAISS library using
 ```shell
 cmake -DCMAKE_BUILD_TYPE=Release -DFAISS_ENABLE_C_API=ON -DBUILD_SHARED_LIBS=OFF -B build .
 ```
@@ -24,7 +38,7 @@ It creates `libfaiss_c.a` file instead of `libfaiss_c.dylib`.
 #include <faiss/c_api/error_c.h>
 */
 ```
-The Kmeans code fails due this error: `Undefined symbols for architecture arm64:`. 
+The Kmeans code fails due this error: `Undefined symbols for architecture arm64:`.
 
 However, this code works when we build `libfaiss_c.dylib` using `-DBUILD_SHARED_LIBS=ON` and the `libfaiss_c.dylib` is added to the `/usr/local/lib`.
 Then, we add the CGO flag in the go code
@@ -44,19 +58,6 @@ But I am trying to package FAISS C_API as a static library and link it to the go
 
 - The test driver code is [here](/pkg/ivf/clustering_faiss_test.go)
 
-### Instructions
-
-1. To build the `libfaiss_c.a` in MacOS
-```shell
-cd cgo/thirdparty
-sh build-faiss-macos.sh
-```
-
-2. To run the test
-```shell
-cd pkg/ivf
-go test -v -run TestFaissKmeans
-```
 
 ### Issue
 
