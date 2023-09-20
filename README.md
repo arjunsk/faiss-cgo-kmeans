@@ -40,7 +40,7 @@ Then, we add the CGO flag in the go code
 */
 ````
 
-But I am trying to package FAISS C_API as a static library and link it to the go code.
+But I am trying to package FAISS C_API as a static library and link it to the go code. Hence, I am building `libfaiss_c.a` locally and packaging as a library.
 
 - The test driver code is [here](/pkg/ivf/clustering_faiss_test.go)
 
