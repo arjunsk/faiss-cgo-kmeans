@@ -18,3 +18,6 @@ endif
 build:
 	$(info [Build binary])
 	$(CGO_OPTS) go build -o $(BIN_NAME) ./cmd/mo-service
+
+run:
+	./mo-service
