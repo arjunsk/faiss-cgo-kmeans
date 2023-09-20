@@ -1,8 +1,8 @@
 package ivf
 
 /*
-#cgo CFLAGS: -I${SRCDIR}/../../cgo/thirdparty/runtimes/osx-arm64/native
-#cgo LDFLAGS: -L${SRCDIR}../../cgo/thirdparty/runtimes/osx-arm64/native -lfaiss_c
+#cgo CFLAGS: -I../../cgo/thirdparty/runtimes/osx-arm64/native
+#cgo LDFLAGS: -L../../cgo/thirdparty/runtimes/osx-arm64/native -lfaiss_c
 
 #include <stdlib.h>
 #include <faiss/c_api/Clustering_c.h>
