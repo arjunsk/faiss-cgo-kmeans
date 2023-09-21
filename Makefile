@@ -8,9 +8,9 @@ UNAME_S := $(shell uname -s)
 cgo:
 	$(info [CGO build])
 ifeq ($(UNAME_S),Darwin)
-	@cd cgo/thirdparty && sh ./build-faiss-macos.sh
+	@cd cgo/thirdparty && sudo sh ./build-faiss-macos.sh
 else
-	@cd cgo/thirdparty && sh ./build-faiss-linux.sh
+	@cd cgo/thirdparty && sudo sh ./build-faiss-linux.sh
 endif
 
 # build mo-service binary
