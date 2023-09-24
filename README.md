@@ -9,4 +9,5 @@ sh build-faiss-macos.sh
 ```
 
 1. https://github.com/aergoio/aergo/blob/develop/contract/vm.go
-   Similar to this: https://github.com/andyalm/faissmask/tree/master/FaissMask/runtimes
+2. https://github.com/andyalm/faissmask/tree/master/FaissMask/runtimes
+3. https://support.apple.com/en-us/HT211861
