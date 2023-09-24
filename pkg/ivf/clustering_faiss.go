@@ -1,9 +1,9 @@
 package ivf
 
 /*
-#cgo darwin LDFLAGS: -Lthirdparty/runtimes/osx-arm64/native -lfaiss_c -lfaiss -lomp
 #cgo CPPFLAGS: -Ithirdparty/libfaiss-src/c_api
 #cgo CFLAGS: -Ithirdparty/libfaiss-src/c_api
+#cgo darwin LDFLAGS: -Lthirdparty/runtimes/osx-arm64/native -lfaiss_c -lfaiss -lomp
 #cgo darwin LDFLAGS: -Wl,-undefined -Wl,dynamic_lookup
 #cgo !darwin LDFLAGS: -Wl,-unresolved-symbols=ignore-all
 
