@@ -13,7 +13,7 @@ func TestFaissClustering_ComputeCenters(t *testing.T) {
 	loadData(rowCnt, dims, data)
 
 	clusterCnt := 10
-	cluster := NewFaissClustering()
+	cluster := New()
 	centers, err := cluster.ComputeClusters(int64(clusterCnt), data)
 	require.Nil(t, err)
 

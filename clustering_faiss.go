@@ -17,14 +17,14 @@ import "C"
 import "errors"
 
 // CGO code for https://github.com/facebookresearch/faiss/blob/main/c_api/Clustering_c.h functions
-type FaissClustering struct {
+type Kmeans struct {
 }
 
-func NewFaissClustering() *FaissClustering {
-	return &FaissClustering{}
+func New() *Kmeans {
+	return &Kmeans{}
 }
 
-func (f *FaissClustering) ComputeClusters(clusterCnt int64, data [][]float32) (centroids [][]float32, err error) {
+func (f *Kmeans) ComputeClusters(clusterCnt int64, data [][]float32) (centroids [][]float32, err error) {
 	if len(data) == 0 {
 		return nil, errors.New("empty rows")
 	}
@@ -73,7 +73,7 @@ func (f *FaissClustering) ComputeClusters(clusterCnt int64, data [][]float32) (c
 	return
 }
 
-func (f *FaissClustering) Close() {
+func (f *Kmeans) Close() {
 	//TODO implement me
 	panic("implement me")
 }
