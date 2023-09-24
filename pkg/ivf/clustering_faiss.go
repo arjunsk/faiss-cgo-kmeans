@@ -2,11 +2,7 @@ package ivf
 
 /*
 #cgo CFLAGS: -I${SRCDIR}/../../cgo/thirdparty/libfaiss-src/c_api
-#cgo darwin LDFLAGS: -Wl,-rpath,${SRCDIR}/../../cgo/thirdparty/runtimes/osx-arm64/native
-#cgo darwin LDFLAGS: -L${SRCDIR}/../../cgo/thirdparty/runtimes/osx-arm64/native
-#cgo !darwin LDFLAGS: -Wl,-rpath,${SRCDIR}/../../cgo/thirdparty/runtimes/osx-x64/native
-#cgo !darwin LDFLAGS: -L${SRCDIR}/../../cgo/thirdparty/runtimes/osx-x64/native
-#cgo LDFLAGS: -lfaiss_c
+#cgo darwin LDFLAGS: -L${SRCDIR}/../../cgo/thirdparty/runtimes/osx-arm64/native -lfaiss_c -lfaiss
 
 #include <stdlib.h>
 #include <faiss/c_api/Clustering_c.h>
