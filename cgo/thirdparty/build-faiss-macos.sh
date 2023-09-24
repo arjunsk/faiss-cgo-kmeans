@@ -15,4 +15,5 @@ if [[ $(uname -m) == 'x86_64' ]]; then
 fi
 
 cp build/c_api/libfaiss_c.a ../runtimes/osx-$arch/native/
+cp build/faiss/libfaiss.a ../runtimes/osx-$arch/native/
 cd ..
