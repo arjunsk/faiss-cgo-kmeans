@@ -1,4 +1,4 @@
-module faiss-go
+module faiss-cgo-kmeans
 
 go 1.20
 
