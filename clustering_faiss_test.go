@@ -1,4 +1,4 @@
-package ivf
+package faiss_cgo_kmeans
 
 import (
 	"github.com/stretchr/testify/require"
