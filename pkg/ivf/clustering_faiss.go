@@ -3,14 +3,15 @@ package ivf
 /*
 #cgo darwin LDFLAGS: -Lthirdparty/runtimes/osx-arm64/native -lfaiss_c -lfaiss -lomp
 #cgo CPPFLAGS: -Ithirdparty/libfaiss-src/c_api
+#cgo CFLAGS: -Ithirdparty/libfaiss-src/c_api
 #cgo darwin LDFLAGS: -Wl,-undefined -Wl,dynamic_lookup
 #cgo !darwin LDFLAGS: -Wl,-unresolved-symbols=ignore-all
 
 #include <stdlib.h>
-#include <faiss/c_api/Clustering_c.h>
-#include <faiss/c_api/impl/AuxIndexStructures_c.h>
-#include <faiss/c_api/index_factory_c.h>
-#include <faiss/c_api/error_c.h>
+#include <Clustering_c.h>
+#include <impl/AuxIndexStructures_c.h>
+#include <index_factory_c.h>
+#include <error_c.h>
 */
 import "C"
 import "errors"
